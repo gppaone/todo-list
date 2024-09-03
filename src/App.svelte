@@ -11,7 +11,7 @@
     });
     let newtodotext = '';
     let todotext = '';
-    let todoitemupdate = '';
+    let todotextupdate = '';
     let todocolor = '#ffffff';
     let todocolorupdate = '';
 
@@ -19,15 +19,15 @@
 
     function addTodoItem(){
         todolist = [{text: newtodotext, done: false, color: todocolor}, ...todolist];
-        todotext = '';
+        newtodotext = '';
     }
     function editTodoItem(idx){
-        todolist[idx].text = todoitemupdate;
+        todolist[idx].text = todotextupdate;
         todolist[idx].color = todocolorupdate;
         todolist = [...todolist];
     }
     function loadEditTodo(idx){
-        todoitemupdate = todolist[idx].text;
+        todotextupdate = todolist[idx].text;
         todocolorupdate = todolist[idx].color;
     }
 
@@ -54,7 +54,7 @@
             <div id="collapseTodo{index}" class="collapse todoEdit" data-bs-parent="#todoaccordion">
                 <div class="input-group mb-3">
                     <span class="input-group-text">Text:</span>
-                    <input id="todoupdate{index}" class="form-control" bind:value={todoitemupdate} />
+                    <input id="todoupdate{index}" class="form-control" bind:value={todotextupdate} />
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">Background:</span>
